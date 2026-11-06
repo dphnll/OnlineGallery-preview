@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Demo Exhibition · 3D Hall</title>
+    <link rel="icon" href="data:," />
+    <script type="module" crossorigin src="./assets/index-dM27CqmZ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CbHdOO9V.css">
+  </head>
+  <body>
+    <div id="scene" class="scene"></div>
+
+    <div id="reticle" class="reticle" hidden></div>
+    <button id="pause" class="pause-btn" type="button" aria-label="Pause" hidden></button>
+    <div id="move-pad" class="move-pad" hidden>
+      <button type="button" data-move="f" class="move-fwd" aria-label="Walk forward (hold)"></button>
+      <button type="button" data-move="b" class="move-back" aria-label="Walk back (hold)"></button>
+    </div>
+    <div id="hover-hint" class="hover-hint" hidden>
+      <span id="hover-title" class="hover-title"></span>
+      <span class="only-mouse">Click to view</span><span class="only-touch">Tap to view</span>
+    </div>
+
+    <section id="overlay" class="overlay">
+      <div class="overlay-card">
+        <p class="kicker" id="overlay-kicker">Virtual gallery · preview</p>
+        <h1 id="overlay-title">Demo Exhibition</h1>
+        <p class="lead" id="overlay-lead">Hall&nbsp;I · three works</p>
+        <div class="progress" id="progress"><span id="progress-bar"></span></div>
+        <button id="enter" class="enter" type="button" disabled>Loading…</button>
+        <p class="message" id="message" role="status" aria-live="polite"></p>
+        <ul class="controls-hint only-mouse">
+          <li><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or arrow keys — walk</li>
+          <li>mouse — look around</li>
+          <li>click a work — view it up close</li>
+          <li><kbd>Esc</kbd> — release the cursor</li>
+        </ul>
+        <ul class="controls-hint only-touch">
+          <li>drag — look around</li>
+          <li>tap the floor — walk there</li>
+          <li>hold ▲ ▼ — walk forward / back</li>
+          <li>tap a work — view it up close</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="viewer" class="viewer" hidden role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+      <div id="viewer-stage" class="viewer-stage">
+        <img id="viewer-img" alt="" draggable="false" />
+      </div>
+      <button id="viewer-close" class="viewer-close" type="button" aria-label="Close">×</button>
+      <footer class="viewer-bar">
+        <div class="viewer-info">
+          <h2 id="viewer-title"></h2>
+          <p id="viewer-author"></p>
+          <p id="viewer-meta" class="viewer-meta"></p>
+        </div>
+        <div class="viewer-tools">
+          <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+          <span id="viewer-zoom" class="viewer-zoom">100%</span>
+          <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+          <button type="button" data-zoom="reset" class="text-btn">Reset</button>
+        </div>
+        <p class="viewer-hint"><span class="only-mouse">Scroll or +/− to zoom · drag to pan · Esc to close</span><span class="only-touch">Pinch or double tap to zoom · drag to pan</span></p>
+      </footer>
+    </section>
+
+  </body>
+</html>
